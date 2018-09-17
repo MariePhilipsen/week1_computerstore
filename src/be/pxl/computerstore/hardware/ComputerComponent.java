@@ -1,14 +1,44 @@
 package be.pxl.computerstore.hardware;
 
+import java.util.Random;
+
 public class ComputerComponent {
     private String vendor;
     private String name;
     private double price;
+    private String articleNumber;
 
     public ComputerComponent(String vendor, String name, double price) {
         this.vendor = vendor;
         this.name = name;
         this.price = price;
+        this.articleNumber = createArticleNumber(vendor);
+
+    }
+
+    public String createArticleNumber(String vendor) {
+
+
+        this.articleNumber = vendor.substring(0, 3).toUpperCase();
+
+        while (this.articleNumber.length() < 3) {
+            this.articleNumber = articleNumber + "X";
+        }
+        this.articleNumber += "-" + generateNumber();
+
+
+        return this.articleNumber;
+    }
+
+    private String generateNumber() {
+        Random rand = new Random();
+        int number = rand.nextInt(100000);
+        String finalRandom = Integer.toString(number);
+
+        while (finalRandom.length() < 5) {
+            finalRandom = "0" + finalRandom;
+        }
+        return finalRandom;
     }
 
     public String getVendor() {
@@ -23,9 +53,6 @@ public class ComputerComponent {
         return price;
     }
 
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
-    }
 
     public void setName(String name) {
         this.name = name;
