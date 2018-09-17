@@ -26,4 +26,12 @@ public class ComputerCase extends ComputerComponent {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "ComputerCase{" +
+                "dimension=" + dimension +
+                ", weight=" + weight +
+                '}';
+    }
 }

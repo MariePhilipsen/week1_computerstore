@@ -18,12 +18,13 @@ public class ComputerComponent {
 
     public String createArticleNumber(String vendor) {
 
+        while (vendor.length() < 3) {
+            vendor += "X";
+        }
 
         this.articleNumber = vendor.substring(0, 3).toUpperCase();
 
-        while (this.articleNumber.length() < 3) {
-            this.articleNumber = articleNumber + "X";
-        }
+
         this.articleNumber += "-" + generateNumber();
 
 
@@ -60,5 +61,10 @@ public class ComputerComponent {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return name + "(" + articleNumber + ")";
     }
 }

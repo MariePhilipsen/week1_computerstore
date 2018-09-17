@@ -5,8 +5,9 @@ public class Processor extends ComputerComponent {
     public static double MIN_CLOCKSPEED = 0.7;
     private double clockspeed;
 
-    public Processor(String vendor, String name, double price) {
+    public Processor(String vendor, String name, double price, double clockspeed) {
         super(vendor, name, price);
+        setClockspeed(clockspeed);
     }
 
     public double getClockspeed() {
@@ -23,5 +24,12 @@ public class Processor extends ComputerComponent {
 
     public static double getMinClockspeed() {
         return MIN_CLOCKSPEED;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Processor{" +
+                "clockspeed=" + clockspeed +
+                '}';
     }
 }
