@@ -67,6 +67,6 @@ public class ComputerComponent {
     }
 
     public void getFullDescription() {
-        System.out.printf("articleNumber = %s %n Vendor = %s %n Name = %s %n Price = %.2f", this.articleNumber, this.vendor, this.name, this.price);
+        System.out.printf("articleNumber = %s %n Vendor = %s %n Name = %s %n Price = %.2f %n", this.articleNumber, this.vendor, this.name, this.price);
     }
 }

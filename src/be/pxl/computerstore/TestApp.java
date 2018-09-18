@@ -17,6 +17,8 @@ public class TestApp {
         computer1.setDimension(new Dimension(10, 20, 20));
 
         computer1.getFullDescription();
+
+        processor1.getFullDescription();
     }
 
 
