@@ -2,6 +2,7 @@ package be.pxl.computerstore;
 
 import be.pxl.computerstore.hardware.ComputerCase;
 import be.pxl.computerstore.hardware.Processor;
+import be.pxl.computerstore.util.Dimension;
 
 public class TestApp {
 
@@ -12,6 +13,10 @@ public class TestApp {
 
         Processor processor1 = new Processor("H", "Intel", 2322.33, 0.4);
         System.out.println(processor1);
+
+        computer1.setDimension(new Dimension(10, 20, 20));
+
+        computer1.getFullDescription();
     }
 
 

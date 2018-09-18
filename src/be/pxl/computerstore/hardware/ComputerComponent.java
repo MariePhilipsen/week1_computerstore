@@ -12,11 +12,11 @@ public class ComputerComponent {
         this.vendor = vendor;
         this.name = name;
         this.price = price;
-        this.articleNumber = createArticleNumber(vendor);
+        createAndSetArticlenumber(vendor);
 
     }
 
-    public String createArticleNumber(String vendor) {
+    public void createAndSetArticlenumber(String vendor) {
 
         while (vendor.length() < 3) {
             vendor += "X";
@@ -27,8 +27,6 @@ public class ComputerComponent {
 
         this.articleNumber += "-" + generateNumber();
 
-
-        return this.articleNumber;
     }
 
     private String generateNumber() {
@@ -66,5 +64,9 @@ public class ComputerComponent {
     @Override
     public String toString() {
         return name + "(" + articleNumber + ")";
+    }
+
+    public void getFullDescription() {
+        System.out.printf("articleNumber = %s %n Vendor = %s %n Name = %s %n Price = %.2f", this.articleNumber, this.vendor, this.name, this.price);
     }
 }

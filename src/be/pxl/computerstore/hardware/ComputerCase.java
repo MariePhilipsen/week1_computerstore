@@ -34,4 +34,12 @@ public class ComputerCase extends ComputerComponent {
                 ", weight=" + weight +
                 '}';
     }
+
+    public void getFullDescription() {
+        super.getFullDescription();
+        System.out.printf("width = %d %n height = %d %n Depth = %d %n Weight = %.2f %n",
+                dimension.getWidth(), dimension.getHeight(), dimension.getDepth(), weight);
+    }
+
+
 }
